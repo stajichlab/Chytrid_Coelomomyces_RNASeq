@@ -14,6 +14,11 @@ MRNA=${SPECIES}_mRNA.fasta
 GENOME=${SPECIES}_Genome.fasta
 GFF=${SPECIES}_Genes.gff3
 
+echo "NO FUNGIDB FOR COELOMOMYCES"
+pigz -dk db/*.gz
+
+exit
+
 if [ ! -f $DB/$MRNA ]; then
 	curl -o $DB/$MRNA $URL/$SPECIES/fasta/data/FungiDB-${VERSION}_${SPECIES}_AnnotatedTranscripts.fasta 
 fi
