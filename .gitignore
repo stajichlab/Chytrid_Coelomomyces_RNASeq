@@ -1,6 +1,9 @@
 *~
 .#*
 #*
+*.idx
+db/*.gff3
+db/*.fasta
 .Rproj.user
 .Rhistory
 .RData
