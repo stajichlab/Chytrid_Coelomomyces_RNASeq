@@ -1,0 +1,4 @@
+"","GOCCID","Pvalue","OddsRatio","ExpCount","Count","Size","Term"
+"1","GO:0005634",0.00478216539028619,0,4.75871313672922,0,213,"nucleus"
+"2","GO:0043227",0.0128206783146599,0.262518230432669,8.42269883824844,3,377,"membrane-bounded organelle"
+"3","GO:0043231",0.0234757179108861,0.293555148022007,7.81948168007149,3,350,"intracellular membrane-bounded organelle"

@@ -8,3 +8,5 @@ db/*.fasta
 .Rhistory
 .RData
 .Ruserdata
+results/kallisto
+*.Rproj
