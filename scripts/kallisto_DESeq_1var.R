@@ -78,11 +78,27 @@ pheatmap(sampleDistMatrix,
 #pcaData <- plotPCA(vsd, intgroup=c("condition", "genotype"), returnData=TRUE)
 pcaData <- plotPCA(vsd, intgroup=c("condition"), returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
+#pcaData <- plotPCA(vsd, intgroup=c("condition", "genotype"), returnData=TRUE)
+pcaData <- plotPCA(vsd, intgroup=c("condition"), returnData=TRUE)
+percentVar <- round(100 * attr(pcaData, "percentVar"))
+
+pcaData$treatment <- c("Infection", "Infection", "Infection", "Infection", "Infection", "Infection", "Sporangia","Sporangia","Sporangia","Sporangia","Sporangia","Sporangia","Sporangia","Sporangia" )
+pcaData$newcond <- c("Early Infection", "Early Infection", "Late Infection", "Late Infection", "Middle Infection", "Middle Infection", "Sporangia 0 hr", "Sporangia 0 hr", "Sporangia 24 hr", "Sporangia 24 hr", "Sporangia 36 hr", "Sporangia 36 hr", "Sporangia 48 hr", "Sporangia 48 hr")
+
+pcaData$newcond <- factor(pcaData$newcond, 
+                          levels = c("Early Infection", "Middle Infection", "Late Infection", 
+                                     "Sporangia 0 hr", "Sporangia 24 hr", "Sporangia 36 hr", 
+                                     "Sporangia 48 hr"))
 
 #ggplot(pcaData, aes(PC1, PC2, color=genotype, shape=condition)) +
-ggplot(pcaData, aes(PC1, PC2, color=condition)) +
-    geom_point(size=3) +
+ggplot(pcaData, aes(PC1, PC2, color=newcond, shape=treatment)) +
+    geom_point(size=4) +
     xlab(paste0("PC1: ",percentVar[1],"% variance")) +
     ylab(paste0("PC2: ",percentVar[2],"% variance")) +
-    coord_fixed()
+    coord_fixed() + 
+    theme(text = element_text(size = 12)) + 
+  labs(color = "Timepoint", shape = "Life Stage") + 
+  scale_color_manual(values =  c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")) +
+  stat_ellipse(aes(group = treatment))
 
+ggsave(filename = 'plots/ordination.pdf', plot = last_plot(), device = 'pdf', width = 7, height = 5, dpi = 300)
