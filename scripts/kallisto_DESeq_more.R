@@ -84,3 +84,22 @@ write.table(rownames(res.sig[res.sig$log2FoldChange<0,]),
             row.names = F,
             col.names = F) #up in inf, down in spor
 
+#add annotation information to DEG table
+library(vroom)
+res.sig.table <- read.table("results/deseq_kallisto/Result_DEGs.tsv")
+annotation <- vroom("db/Coelomomyces_lativittatus_CIRM-AVA-1-Meiospore.annotations.txt")
+
+#making sure the names line up
+annotation$GeneID <- paste0(annotation$GeneID, "-T1")
+res.sig.table$GeneID <- row.names(res.sig.table)
+
+#join tables
+res.sig.with.annot <- left_join(res.sig.table, annotation)
+
+#write table with annotation information
+write.table(res.sig.with.annot, "results/deseq_kallisto/Result_DEGs_annot.tsv", 
+            quote=F, 
+            row.names=F, 
+            sep="\t")
+
+
