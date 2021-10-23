@@ -1,0 +1,117 @@
+﻿GOBPID,Pvalue,OddsRatio,ExpCount,Count,Size,Term,Category, Revigo_Eliminated
+GO:0006082,5.18E-07,5.756302521,3.860589812,16,135,organic acid metabolic process,BP, False
+GO:0019752,5.18E-07,5.756302521,3.860589812,16,135,carboxylic acid metabolic process,BP, True
+GO:0043436,5.18E-07,5.756302521,3.860589812,16,135,oxoacid metabolic process,BP, True
+GO:0016053,1.76E-06,12.79761905,0.91510277,8,32,organic acid biosynthetic process,BP, True
+GO:0046394,1.76E-06,12.79761905,0.91510277,8,32,carboxylic acid biosynthetic process,BP, False
+GO:0009073,2.98E-06,144.8666667,0.142984808,4,5,aromatic amino acid family biosynthetic process,BP, True
+GO:0006520,9.00E-06,5.813716404,2.716711349,12,95,cellular amino acid metabolic process,BP, True
+GO:0008652,1.22E-05,15.96059113,0.571939231,6,20,cellular amino acid biosynthetic process,BP, True
+GO:0009072,5.60E-05,16.66409861,0.457551385,5,16,aromatic amino acid family metabolic process,BP, False
+GO:0044283,0.00028605,5.608465608,1.773011618,8,62,small molecule biosynthetic process,BP, False
+GO:0044281,0.000408883,3.013149484,7.149240393,17,250,small molecule metabolic process,BP, False
+GO:0006848,0.000805368,Inf,0.057193923,2,2,pyruvate transport,BP, True
+GO:0006850,0.000805368,Inf,0.057193923,2,2,mitochondrial pyruvate transmembrane transport,BP, False
+GO:1901475,0.000805368,Inf,0.057193923,2,2,pyruvate transmembrane transport,BP, True
+GO:0032787,0.000965656,7.925571113,0.800714924,5,28,monocarboxylic acid metabolic process,BP, False
+GO:0055085,0.001061823,3.490875348,3.803395889,11,133,transmembrane transport,BP, False
+GO:0072330,0.001657461,17.7704918,0.257372654,3,9,monocarboxylic acid biosynthetic process,BP, True
+GO:1903825,0.002371442,70.09677419,0.085790885,2,3,organic acid transmembrane transport,BP, True
+GO:1905039,0.002371442,70.09677419,0.085790885,2,3,carboxylic acid transmembrane transport,BP, True
+GO:0006631,0.003124705,13.31557377,0.314566577,3,11,fatty acid metabolic process,BP, True
+GO:0006334,0.004655387,35.03225806,0.114387846,2,4,nucleosome assembly,BP, True
+GO:0015718,0.004655387,35.03225806,0.114387846,2,4,monocarboxylic acid transport,BP, True
+GO:0015849,0.004655387,35.03225806,0.114387846,2,4,organic acid transport,BP, False
+GO:0031497,0.004655387,35.03225806,0.114387846,2,4,chromatin assembly,BP, True
+GO:0034728,0.004655387,35.03225806,0.114387846,2,4,nucleosome organization,BP, False
+GO:0046942,0.004655387,35.03225806,0.114387846,2,4,carboxylic acid transport,BP, True
+GO:0098656,0.004655387,35.03225806,0.114387846,2,4,anion transmembrane transport,BP, False
+GO:0006629,0.007062193,3.196620584,2.888293119,8,101,lipid metabolic process,BP, False
+GO:0006333,0.007616132,23.34408602,0.142984808,2,5,chromatin assembly or disassembly,BP, True
+GO:0006633,0.007616132,23.34408602,0.142984808,2,5,fatty acid biosynthetic process,BP, True
+GO:1990542,0.015412176,13.99354839,0.200178731,2,7,mitochondrial transmembrane transport,BP, True
+GO:0006323,0.020173587,11.65591398,0.228775693,2,8,DNA packaging,BP, False
+GO:0065004,0.025463909,9.986175115,0.257372654,2,9,protein-DNA complex assembly,BP, True
+GO:0071824,0.025463909,9.986175115,0.257372654,2,9,protein-DNA complex subunit organization,BP, False
+GO:0006418,0.025701081,3.959259259,1.143878463,4,40,tRNA aminoacylation for protein translation,BP, False
+GO:0006083,0.028596962,Inf,0.028596962,1,1,acetate metabolic process,BP, False
+GO:0006421,0.028596962,Inf,0.028596962,1,1,asparaginyl-tRNA aminoacylation,BP, True
+GO:0006423,0.028596962,Inf,0.028596962,1,1,cysteinyl-tRNA aminoacylation,BP, True
+GO:0006636,0.028596962,Inf,0.028596962,1,1,unsaturated fatty acid biosynthetic process,BP, False
+GO:0006656,0.028596962,Inf,0.028596962,1,1,phosphatidylcholine biosynthetic process,BP, False
+GO:0006694,0.028596962,Inf,0.028596962,1,1,steroid biosynthetic process,BP, True
+GO:0008202,0.028596962,Inf,0.028596962,1,1,steroid metabolic process,BP, False
+GO:0015858,0.028596962,Inf,0.028596962,1,1,nucleoside transport,BP, True
+GO:0016125,0.028596962,Inf,0.028596962,1,1,sterol metabolic process,BP, False
+GO:0016126,0.028596962,Inf,0.028596962,1,1,sterol biosynthetic process,BP, True
+GO:0019541,0.028596962,Inf,0.028596962,1,1,propionate metabolic process,BP, False
+GO:0019679,0.028596962,Inf,0.028596962,1,1,"propionate metabolic process, methylcitrate cycle",BP, True
+GO:0033559,0.028596962,Inf,0.028596962,1,1,unsaturated fatty acid metabolic process,BP, False
+GO:0046417,0.028596962,Inf,0.028596962,1,1,chorismate metabolic process,BP, False
+GO:0046459,0.028596962,Inf,0.028596962,1,1,short-chain fatty acid metabolic process,BP, False
+GO:0046470,0.028596962,Inf,0.028596962,1,1,phosphatidylcholine metabolic process,BP, False
+GO:1901642,0.028596962,Inf,0.028596962,1,1,nucleoside transmembrane transport,BP, False
+GO:0043038,0.030170798,3.747368421,1.201072386,4,42,amino acid activation,BP, False
+GO:0043039,0.030170798,3.747368421,1.201072386,4,42,tRNA aminoacylation,BP, True
+GO:0008610,0.040418936,3.384126984,1.315460232,4,46,lipid biosynthetic process,BP, False
+GO:1901605,0.043924959,4.227540984,0.800714924,3,28,alpha-amino acid metabolic process,BP, False
+GO:0071103,0.044183699,6.980645161,0.343163539,2,12,DNA conformation change,BP, True
+GO:0000786,4.54E-10,345.1578947,0.156389634,6,7,nucleosome,CC, False
+GO:0032993,1.30E-08,86.05263158,0.223413762,6,10,protein-DNA complex,CC, False
+GO:0044815,1.30E-08,86.05263158,0.223413762,6,10,DNA packaging complex,CC, False
+GO:0000785,2.88E-07,38.07017544,0.335120643,6,15,chromatin,CC, True
+GO:0005694,0.00147237,6.081871345,1.340482574,6,60,chromosome,CC, False
+GO:0005829,0.01567831,13.50310559,0.201072386,2,9,cytosol,CC, False
+GO:0000015,0.022341376,Inf,0.022341376,1,1,phosphopyruvate hydratase complex,CC, False
+GO:0005835,0.022341376,Inf,0.022341376,1,1,fatty acid synthase complex,CC, False
+GO:0016020,0.031874703,2.297435897,9.025915996,14,404,membrane,CC, False
+GO:0018995,0.034540804,4.836363636,0.737265416,3,33,host cellular component,CC, False
+GO:0033643,0.034540804,4.836363636,0.737265416,3,33,host cell part,CC, True
+GO:0033646,0.034540804,4.836363636,0.737265416,3,33,host intracellular part,CC, False
+GO:0033647,0.034540804,4.836363636,0.737265416,3,33,host intracellular organelle,CC, True
+GO:0033648,0.034540804,4.836363636,0.737265416,3,33,host intracellular membrane-bounded organelle,CC, True
+GO:0042025,0.034540804,4.836363636,0.737265416,3,33,host cell nucleus,CC, True
+GO:0043656,0.034540804,4.836363636,0.737265416,3,33,host intracellular region,CC, True
+GO:0043657,0.034540804,4.836363636,0.737265416,3,33,host cell,CC, True
+GO:0016835,0.000694011,12.96179775,0.435888852,4,14,carbon-oxygen lyase activity,MF, False
+GO:0004107,0.000959281,Inf,0.062269836,2,2,chorismate synthase activity,MF, False
+GO:0016628,0.000959281,Inf,0.062269836,2,2,"oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor",MF, False
+GO:0016838,0.000959281,Inf,0.062269836,2,2,"carbon-oxygen lyase activity, acting on phosphates",MF, False
+GO:0046982,0.001927818,9.245585875,0.560428524,4,18,protein heterodimerization activity,MF, False
+GO:0016491,0.018256976,2.156909598,6.16471376,12,198,oxidoreductase activity,MF, False
+GO:0046983,0.024219563,4.019662921,1.120857047,4,36,protein dimerization activity,MF, False
+GO:0022857,0.0283136,2.259814613,4.358888517,9,140,transmembrane transporter activity,MF, False
+GO:0004190,0.029941516,9.064364207,0.280214262,2,9,aspartic-type endopeptidase activity,MF, False
+GO:0070001,0.029941516,9.064364207,0.280214262,2,9,aspartic-type peptidase activity,MF, False
+GO:0000062,0.031134918,Inf,0.031134918,1,1,fatty-acyl-CoA binding,MF, False
+GO:0003855,0.031134918,Inf,0.031134918,1,1,3-dehydroquinate dehydratase activity,MF, False
+GO:0003866,0.031134918,Inf,0.031134918,1,1,3-phosphoshikimate 1-carboxyvinyltransferase activity,MF, False
+GO:0003986,0.031134918,Inf,0.031134918,1,1,acetyl-CoA hydrolase activity,MF, False
+GO:0004084,0.031134918,Inf,0.031134918,1,1,branched-chain-amino-acid transaminase activity,MF, False
+GO:0004106,0.031134918,Inf,0.031134918,1,1,chorismate mutase activity,MF, False
+GO:0004312,0.031134918,Inf,0.031134918,1,1,fatty acid synthase activity,MF, False
+GO:0004318,0.031134918,Inf,0.031134918,1,1,enoyl-[acyl-carrier-protein] reductase (NADH) activity,MF, False
+GO:0004491,0.031134918,Inf,0.031134918,1,1,methylmalonate-semialdehyde dehydrogenase (acylating) activity,MF, False
+GO:0004634,0.031134918,Inf,0.031134918,1,1,phosphopyruvate hydratase activity,MF, False
+GO:0004735,0.031134918,Inf,0.031134918,1,1,pyrroline-5-carboxylate reductase activity,MF, False
+GO:0004764,0.031134918,Inf,0.031134918,1,1,shikimate 3-dehydrogenase (NADP+) activity,MF, False
+GO:0004768,0.031134918,Inf,0.031134918,1,1,stearoyl-CoA 9-desaturase activity,MF, False
+GO:0004816,0.031134918,Inf,0.031134918,1,1,asparagine-tRNA ligase activity,MF, True
+GO:0004817,0.031134918,Inf,0.031134918,1,1,cysteine-tRNA ligase activity,MF, True
+GO:0005337,0.031134918,Inf,0.031134918,1,1,nucleoside transmembrane transporter activity,MF, False
+GO:0008410,0.031134918,Inf,0.031134918,1,1,CoA-transferase activity,MF, False
+GO:0008775,0.031134918,Inf,0.031134918,1,1,acetate CoA-transferase activity,MF, False
+GO:0016215,0.031134918,Inf,0.031134918,1,1,acyl-CoA desaturase activity,MF, True
+GO:0016405,0.031134918,Inf,0.031134918,1,1,CoA-ligase activity,MF, True
+GO:0016717,0.031134918,Inf,0.031134918,1,1,"oxidoreductase activity, acting on paired donors, with oxidation of a pair of donors resulting in the reduction of molecular oxygen to two molecules of water",MF, False
+GO:0016878,0.031134918,Inf,0.031134918,1,1,acid-thiol ligase activity,MF, False
+GO:0030729,0.031134918,Inf,0.031134918,1,1,acetoacetate-CoA ligase activity,MF, True
+GO:1901567,0.031134918,Inf,0.031134918,1,1,fatty acid derivative binding,MF, False
+GO:0005085,0.031519221,3.671268058,1.214261801,4,39,guanyl-nucleotide exchange factor activity,MF, False
+GO:0016627,0.032966693,4.79,0.716103113,3,23,"oxidoreductase activity, acting on the CH-CH group of donors",MF, False
+GO:0004175,0.03600838,2.424542306,3.144626716,7,101,endopeptidase activity,MF, False
+GO:0016829,0.037032284,3.47039174,1.276531637,4,41,lyase activity,MF, False
+GO:0004812,0.03998478,3.37788291,1.307666555,4,42,aminoacyl-tRNA ligase activity,MF, False
+GO:0016875,0.03998478,3.37788291,1.307666555,4,42,"ligase activity, forming carbon-oxygen bonds",MF, False
+GO:0016874,0.044895344,2.489832007,2.61533311,6,84,ligase activity,MF, False
+GO:0005215,0.047908718,2.031280788,4.794777369,9,154,transporter activity,MF, False
