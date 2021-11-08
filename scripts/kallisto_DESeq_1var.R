@@ -58,13 +58,19 @@ colnames(df)[1:2] <- c("x", "y")
 ggplot(df, aes(x = x, y = y)) + geom_hex(bins = 80) +
   coord_fixed() + facet_grid( . ~ transformation)
 
-select <- order(rowMeans(counts(dds,normalized=TRUE)),
-                decreasing=TRUE)[1:25]
+#use DEGs 
+res.sig.degs <- read.delim("results/deseq_kallisto/Result_DEGs.tsv")
+select_mean <- order(res.sig.degs$baseMean, decreasing=TRUE)[1:25]
+res.sig.degs.select.mean <- rownames(res.sig.degs[select_mean,])
+
+#select <- order(rowMeans(counts(dds,normalized=TRUE)),
+#                decreasing=TRUE)[1:25]
 #df <- as.data.frame(colData(dds)[,c("condition","genotype")])
 #df <- as.data.frame(colData(dds)[,c("condition")])
 
 
-heatmap_data <- assay(vsd)[select,]
+#heatmap_data <- assay(vsd)[select,]
+heatmap_data <- assay(vsd)[res.sig.degs.select.mean,]
 
 colnames(heatmap_data) <-  c("Early Infection (A)", "Early Infection (B)", "Late Infection (A)", "Late Infection (B)", "Middle Infection (A)", "Middle Infection (B)", "Sporangia 0 hr (A)", "Sporangia 0 hr (B)", "Sporangia 24 hr (A)", "Sporangia 24 hr (B)", "Sporangia 36 hr (A)", "Sporangia 36 hr (B)", "Sporangia 48 hr (A)", "Sporangia 48 hr (B)")
 col_order <-c("Early Infection (A)", "Early Infection (B)", "Middle Infection (A)", "Middle Infection (B)", "Late Infection (A)", "Late Infection (B)", "Sporangia 0 hr (A)", "Sporangia 0 hr (B)", "Sporangia 24 hr (A)", "Sporangia 24 hr (B)", "Sporangia 36 hr (A)", "Sporangia 36 hr (B)", "Sporangia 48 hr (A)", "Sporangia 48 hr (B)")
@@ -90,7 +96,7 @@ ph <- as.ggplot(pheatmap(heatmap_data, cluster_rows=FALSE, show_rownames=TRUE,
 
 ph
 
-ggsave(filename = 'plots/heatmap_overall_top25.pdf', plot = last_plot(), device = 'pdf', width = 7, height = 5, dpi = 300)
+ggsave(filename = 'plots/heatmap_deg_top25_mean.pdf', plot = last_plot(), device = 'pdf', width = 7, height = 5, dpi = 300)
 
 
 sampleDists <- dist(t(assay(vsd)))
