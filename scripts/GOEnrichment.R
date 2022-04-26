@@ -30,10 +30,10 @@ library(GOstats)
 #load datasets
 
 #load in genes and respective GO IDS
-meiospore <- vroom('db/CM_gogenes.txt', col_names = c("GeneID", "GO"))
+meiospore <- vroom('db/CoelomomycesAOM90.GO.txt', col_names = c("GeneID", "GO"))
 
 #list of all genes in genome
-all_genes <- read.delim('db/universal_genes.txt',header = FALSE)
+all_genes <- read.delim('db/AOM_universal_genes.txt',header = FALSE)
 
 #respective outputs of kalisto_DESeq_more.R
 enrich.spo <- read.delim('results/deseq_kallisto/Results_Up.tsv', header =FALSE)
@@ -75,7 +75,7 @@ params <- GSEAGOHyperGParams(name="My Custom GSEA based annot Params",
 Over <- hyperGTest(params)
 summary(Over)
 Over
-write.csv(summary(Over),"results/Spo_OverMF_enrich.csv");
+write.csv(summary(Over),"results/GO_enrich_kallisto/Spo_OverMF_enrich.csv");
 
 paramsCC <- GSEAGOHyperGParams(name="My Custom GSEA based annot Params",
                                geneSetCollection=meiospore.gsc,

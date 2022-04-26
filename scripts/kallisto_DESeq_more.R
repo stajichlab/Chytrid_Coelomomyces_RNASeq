@@ -18,7 +18,7 @@ library(RColorBrewer)
 samples <- read.table("samples.csv",header=TRUE,sep=",")
 samples$Name = sprintf("%s.r%s",samples$Condition,samples$Replicate)
 samples$Name
-files <- file.path("results","kallisto",samples$Name,"abundance.h5")
+files <- file.path("results","kallisto_AOM90_BBNH",samples$Name,"abundance.tsv")
 txi.kallisto <- tximport(files, type = "kallisto", txOut = TRUE)
 head(txi.kallisto$counts)
 colnames(txi.kallisto$counts) <- samples$Name
@@ -89,6 +89,11 @@ library(vroom)
 res.sig.table <- read.table("results/deseq_kallisto/Result_DEGs.tsv")
 annotation <- vroom("db/Coelomomyces_lativittatus_CIRM-AVA-1-Meiospore.annotations.txt")
 
+#add annotation information to DEG table
+library(vroom)
+res.sig.table <- read.table("results/deseq_kallisto/Result_DEGs.tsv")
+annotation <- vroom("db/CoelomomycesAOM90.annotation.txt")
+
 #making sure the names line up
 annotation$GeneID <- paste0(annotation$GeneID, "-T1")
 res.sig.table$GeneID <- row.names(res.sig.table)
@@ -96,10 +101,12 @@ res.sig.table$GeneID <- row.names(res.sig.table)
 #join tables
 res.sig.with.annot <- left_join(res.sig.table, annotation)
 
+#which direction is expression?
+res.sig.with.annot.v2 <- res.sig.with.annot %>% mutate(Expression=ifelse(log2FoldChange > 2, "Sporangia", "Infection"))
+
 #write table with annotation information
-write.table(res.sig.with.annot, "results/deseq_kallisto/Result_DEGs_annot.tsv", 
+write.table(res.sig.with.annot.v2, "results/deseq_kallisto/Result_DEGs_annot.tsv", 
             quote=F, 
             row.names=F, 
             sep="\t")
-
 

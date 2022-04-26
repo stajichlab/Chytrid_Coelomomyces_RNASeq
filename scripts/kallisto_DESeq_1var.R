@@ -13,7 +13,7 @@ samples <- read.table("samples.csv",header=TRUE,sep=",")
 #samples$Name = sprintf("%s.%s.r%s",samples$Genotype,samples$Treatment,samples$Replicate)
 samples$Name = sprintf("%s.r%s",samples$Condition,samples$Replicate)
 samples$Name
-files <- file.path("results","kallisto",samples$Name,"abundance.h5")
+files <- file.path("results","kallisto_AOM90_BBNH",samples$Name,"abundance.tsv")
 txi.kallisto <- tximport(files, type = "kallisto", txOut = TRUE)
 head(txi.kallisto$counts)
 colnames(txi.kallisto$counts) <- samples$Name
@@ -58,10 +58,18 @@ colnames(df)[1:2] <- c("x", "y")
 ggplot(df, aes(x = x, y = y)) + geom_hex(bins = 80) +
   coord_fixed() + facet_grid( . ~ transformation)
 
-#use DEGs 
+
+######
+
 res.sig.degs <- read.delim("results/deseq_kallisto/Result_DEGs.tsv")
+#select_pval <- order(res.sig.degs$padj, decreasing=FALSE)[1:25]
 select_mean <- order(res.sig.degs$baseMean, decreasing=TRUE)[1:25]
+
+#select_pval_all <- order(res.sig.degs$log2FoldChange, decreasing=TRUE)
+
+#res.sig.degs.select.pval <- rownames(res.sig.degs[select_pval,])
 res.sig.degs.select.mean <- rownames(res.sig.degs[select_mean,])
+#res.sig.degs.all <-rownames(res.sig.degs[select_pval_all,])
 
 #select <- order(rowMeans(counts(dds,normalized=TRUE)),
 #                decreasing=TRUE)[1:25]
@@ -70,7 +78,9 @@ res.sig.degs.select.mean <- rownames(res.sig.degs[select_mean,])
 
 
 #heatmap_data <- assay(vsd)[select,]
+#heatmap_data <- assay(vsd)[res.sig.degs.select.pval,]
 heatmap_data <- assay(vsd)[res.sig.degs.select.mean,]
+#heatmap_data <- assay(vsd)[res.sig.degs.all,]
 
 colnames(heatmap_data) <-  c("Early Infection (A)", "Early Infection (B)", "Late Infection (A)", "Late Infection (B)", "Middle Infection (A)", "Middle Infection (B)", "Sporangia 0 hr (A)", "Sporangia 0 hr (B)", "Sporangia 24 hr (A)", "Sporangia 24 hr (B)", "Sporangia 36 hr (A)", "Sporangia 36 hr (B)", "Sporangia 48 hr (A)", "Sporangia 48 hr (B)")
 col_order <-c("Early Infection (A)", "Early Infection (B)", "Middle Infection (A)", "Middle Infection (B)", "Late Infection (A)", "Late Infection (B)", "Sporangia 0 hr (A)", "Sporangia 0 hr (B)", "Sporangia 24 hr (A)", "Sporangia 24 hr (B)", "Sporangia 36 hr (A)", "Sporangia 36 hr (B)", "Sporangia 48 hr (A)", "Sporangia 48 hr (B)")
@@ -96,7 +106,7 @@ ph <- as.ggplot(pheatmap(heatmap_data, cluster_rows=FALSE, show_rownames=TRUE,
 
 ph
 
-ggsave(filename = 'plots/heatmap_deg_top25_mean.pdf', plot = last_plot(), device = 'pdf', width = 7, height = 5, dpi = 300)
+ggsave(filename = 'plots/heatmap_deg_top25_basemean.pdf', plot = last_plot(), device = 'pdf', width = 7, height = 6, dpi = 300)
 
 
 sampleDists <- dist(t(assay(vsd)))
@@ -137,7 +147,10 @@ ord
 ggsave(filename = 'plots/ordination_guides.pdf', plot = last_plot(), device = 'pdf', width = 7, height = 5, dpi = 300)
 
 
-ph + ord + 
-  plot_layout(widths = c(2.5, 1))  + plot_annotation(tag_levels = 'A') + plot_layout(guides = "collect") 
-
-ggsave(filename = 'plots/combined_right.pdf', plot = last_plot(), device = 'pdf', width = 12, height = 6, dpi = 300)
+# ph + ord + 
+#   plot_layout(widths = c(2.5, 1))  + plot_annotation(tag_levels = 'A') + plot_layout(guides = "collect") 
+# 
+# # 
+# # 
+# # (ord / ph)  + plot_annotation(tag_levels = 'A') + plot_layout(heights = c(1, 2.5))
+# # ggsave(filename = 'plots/combined_right_v2.pdf', plot = last_plot(), device = 'pdf', width = 12, height = 6, dpi = 300)

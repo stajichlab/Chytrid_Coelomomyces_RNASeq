@@ -10,3 +10,6 @@ db/*.fasta
 .Ruserdata
 results/kallisto
 *.Rproj
+results/kallisto_AOM90_BBNH
+plots/exploratory
+plots/*afphoto
